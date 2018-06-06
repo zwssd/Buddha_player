@@ -45,7 +45,6 @@ void addToPlaylist(const QList<QUrl> &urls)
 }
 
 
-
 void MainWindow::on_pushButton_5_clicked()
 {
     QFileDialog fileDialog(this);
