@@ -4,11 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QMAKE_CXXFLAGS += -std=c++0x
-CONFIG   += c++11
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui multimedia
+QT += widgets
 
 TARGET = Buddha_player
 TEMPLATE = app
@@ -32,14 +29,14 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
-unix:!macx: LIBS += -L$$PWD/../../Qt5.11.0/5.11.0/gcc_64/lib/ -lQt5Multimedia
+#unix:!macx: LIBS += -L$$PWD/../../Qt5.11.0/5.11.0/gcc_64/lib/ -lQt5Multimedia
 
 #INCLUDEPATH += $$PWD/../../Qt5.11.0/5.11.0/gcc_64/lib
 #DEPENDPATH += $$PWD/../../Qt5.11.0/5.11.0/gcc_64/lib
 
-unix:!macx: LIBS += -L$$PWD/../../Qt5.11.0/5.11.0/gcc_64/lib/ -lQt5MultimediaWidgets
+#unix:!macx: LIBS += -L$$PWD/../../Qt5.11.0/5.11.0/gcc_64/lib/ -lQt5MultimediaWidgets
 
-#INCLUDEPATH += $$PWD/../../Qt5.11.0/5.11.0/gcc_64/include
+INCLUDEPATH += $$PWD/../../Qt5.11.0/5.11.0/gcc_64/include
 #DEPENDPATH += $$PWD/../../Qt5.11.0/5.11.0/gcc_64/include
-INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5
-DEPENDPATH += /usr/include/x86_64-linux-gnu/qt5
+#INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5
+#DEPENDPATH += /usr/include/x86_64-linux-gnu/qt5
