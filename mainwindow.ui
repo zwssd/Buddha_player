@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>686</width>
-    <height>434</height>
+    <width>676</width>
+    <height>372</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>120</x>
       <y>10</y>
       <width>51</width>
       <height>34</height>
@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>170</x>
       <y>10</y>
       <width>51</width>
       <height>34</height>
@@ -43,7 +43,7 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>60</x>
       <y>10</y>
       <width>51</width>
       <height>34</height>
@@ -56,8 +56,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>10</y>
+      <x>230</x>
+      <y>20</y>
       <width>51</width>
       <height>34</height>
      </rect>
@@ -71,9 +71,22 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>241</width>
-      <height>331</height>
+      <width>161</width>
+      <height>281</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>open</string>
     </property>
    </widget>
   </widget>
@@ -82,14 +95,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>686</width>
-     <height>30</height>
+     <width>676</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>Fi&amp;le</string>
     </property>
+    <addaction name="actionOpen"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -124,6 +138,11 @@
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
