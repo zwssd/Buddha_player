@@ -1,17 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "QtMultimedia/QMediaPlayer"
-#include "QtMultimedia/QMediaPlaylist"
-
-QMediaPlayer* m_player = new QMediaPlayer;
-QMediaPlaylist *m_playlist = new QMediaPlaylist;
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    m_player = new QMediaPlayer;
+    m_playlist = new QMediaPlaylist;
 
     this->setWindowTitle(tr("Buddha Player"));
     ui->musicList->setViewMode(QListView::ListMode);
@@ -26,7 +23,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-static bool isPlaylist(const QUrl &url) // Check for ".m3u" playlists.
+bool isPlaylist(const QUrl &url) // Check for ".m3u" playlists.
 {
     if (!url.isLocalFile())
         return false;
@@ -34,7 +31,7 @@ static bool isPlaylist(const QUrl &url) // Check for ".m3u" playlists.
     return fileInfo.exists() && !fileInfo.suffix().compare(QLatin1String("m3u"), Qt::CaseInsensitive);
 }
 
-void addToPlaylist(const QList<QUrl> &urls)
+void MainWindow::addToPlaylist(const QList<QUrl> &urls)
 {
     for (auto &url: urls) {
         if (isPlaylist(url))
@@ -60,4 +57,9 @@ void MainWindow::on_pushButton_5_clicked()
         addToPlaylist(fileDialog.selectedUrls());
 }
 
-
+void MainWindow::on_pushButton_clicked()
+{
+    m_player->setPlaylist(m_playlist);
+    m_player->setVolume(80);
+    m_player->play();
+}
